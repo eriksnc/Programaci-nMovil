@@ -5,39 +5,18 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 //
-class calculadora extends StatelessWidget
-{
-  const calculadora({Key? key}) : super(key: key);
-  // This widget is the root of your application.
-  @override
-  // Construye in widget en un contexto
-  Widget build(BuildContext context)
-  {
-    // Construimos el objetp
-    // This is the theme of your application.
-    return MaterialApp(
-      title: 'Primera Asignación',
-      theme: ThemeData
-        (
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Calculadora'), );
-  }
-}
 // Widget con estado
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class calculadora extends StatefulWidget {
+  const calculadora({Key? key}) : super(key: key);
   // Como se esta pidiendo el titulo este se debe declarar como final
-  final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _calculadora createState() => _calculadora();
 }
 
 // Se cambia el estado de la vista de la App
-class _MyHomePageState extends State<MyHomePage> {
+class _calculadora extends State<calculadora> {
   String _numero = "";
-
 
   void _vaciar() {
     // Actualizar el estado con Set State
@@ -126,16 +105,9 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-
-        title: Text(widget.title),
-
-      ),
-
       /// BOTONES
       body: Center(
         child: Column(

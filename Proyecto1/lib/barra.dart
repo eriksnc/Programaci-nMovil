@@ -6,7 +6,6 @@ class barra extends StatefulWidget
   const barra({Key? key}) : super(key: key);
 
   @override
-  //_basiccreateState createState=> _basiccreateState();
   _BasicBarraState createState() => _BasicBarraState();
 }
 
