@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 import 'package:proyecto1/calculadora.dart';
 import 'package:proyecto1/cuadroDeTexto.dart';
@@ -24,12 +26,9 @@ class _BasicBarraState extends State<barra> {
   TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
 
   static const List<Widget> _paginas = <Widget>[
-    const Text(
-      'INICIO',
-      style: optionStyle,
-    ),
-    calculadora(),
-   cuadroDeTexto(),
+      Icon(Icons.home,size: 250),
+      calculadora(),
+      cuadroDeTexto(),
 
   ];
 
@@ -55,8 +54,8 @@ class _BasicBarraState extends State<barra> {
             label: 'Calculadora',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'Informacion',
+            icon: Icon(Icons.edit),
+            label: 'Ingreso de datos',
           ),
         ],
         currentIndex: _selectedIndex,
