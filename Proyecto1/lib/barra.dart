@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto1/calculadora.dart';
+import 'package:proyecto1/cuadroDeTexto.dart';
 
 class barra extends StatefulWidget
 {
@@ -28,10 +29,8 @@ class _BasicBarraState extends State<barra> {
       style: optionStyle,
     ),
     calculadora(),
-    const Text(
-      'Informacion',
-      style: optionStyle,
-    ),
+   cuadroDeTexto(),
+
   ];
 
   @override
