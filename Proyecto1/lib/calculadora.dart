@@ -1,14 +1,12 @@
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
+
 
 //
 // Widget con estado
 class calculadora extends StatefulWidget {
   const calculadora({Key? key}) : super(key: key);
-  // Como se esta pidiendo el titulo este se debe declarar como final
 
   @override
   _calculadora createState() => _calculadora();

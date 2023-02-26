@@ -4,9 +4,11 @@ import 'package:flutter/painting.dart';
 
 
 class cuadroDeTexto extends StatefulWidget {
+
   const cuadroDeTexto({Key? key}) : super(key: key);
   @override
   _cuadrotextoState createState() => _cuadrotextoState();
+
 }
 
 class _cuadrotextoState extends State<cuadroDeTexto>{
@@ -29,45 +31,6 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
     super.dispose();
   }
 
-/*
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // El primer campo de texto se enfocará tan pronto como se inicie la aplicación
-            TextField(
-              decoration: InputDecoration(
-                  labelText: 'Ingresa tu usuario'
-              ),
-              autofocus: true,
-            ),
-            // El segundo campo de texto se enfocará cuando un usuario pulse el
-            // FloatingActionButton
-            TextField(
-              decoration: InputDecoration(
-                  labelText: 'Ingresa tu carrera'
-              ),
-              focusNode: myFocusNode,
-            ),
-          ],
-        ),
-
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        // Cuando el botón es pulsado, pide a Flutter que haga focus sobre nuestro
-        // campo de texto usando myFocusNode.
-        onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
-        tooltip: 'Focus Second Text Field',
-        child: Icon(Icons.edit),
-      ), // Esta coma final hace que el auto-formatting sea más agradable para los métodos build.
-    );
-
-  }
-*/
 
   @override
   Widget build(BuildContext context) {
@@ -90,6 +53,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
               }
             },
             decoration: InputDecoration(
+                icon: Icon(Icons.perm_contact_cal_rounded),
                 labelText: 'Ingresa tu usuario'
             ),
 
@@ -100,13 +64,15 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
             textAlign: TextAlign.center,
             validator: (value) {
               if (value!.isEmpty) {
+
                 return 'Ingrese al area que pertenece';
               }else{
+
                texto2 = value;
               }
             },
             decoration: InputDecoration(
-
+                icon: Icon(Icons.work),
                 labelText: 'Ingresa tu carrera'
             ),
           ),
@@ -123,8 +89,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                 // el formulario no es válido.
                 if (_formKey.currentState!.validate()) {
                   // Si el formulario es válido, queremos mostrar un Snackbar
-                  Scaffold.of(context)
-                      .showSnackBar(SnackBar(content: Text('Usuario:'+texto1+'\nCarrera: '+texto2)));
+                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Usuario: '+texto1+'\nCarrera: '+texto2)));
 
                 }
               },
