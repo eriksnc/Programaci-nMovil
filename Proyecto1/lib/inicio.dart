@@ -30,6 +30,7 @@ class _inicio extends State<inicio>{
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>
               [
+
                 Text
                   (
                   //'Pagina Inicial\n Bienvenido\nUsuario: '+widget.text1+'\nCarrera: '+widget.text2,
@@ -43,6 +44,7 @@ class _inicio extends State<inicio>{
                   ),
                 ///Image.asset('assets/images/Quede.png'),
                 cuadroDeTexto(),
+
               ],
              ),
           )

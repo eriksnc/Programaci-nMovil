@@ -16,13 +16,12 @@ class barra extends StatefulWidget
 
 
 class _BasicBarraState extends State<barra> {
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-  late String text1, text2;
-
 
 
   int _selectedIndex = 0;
@@ -30,7 +29,7 @@ class _BasicBarraState extends State<barra> {
   TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
 
   static const List<Widget> _paginas = <Widget>[
-      inicio(),
+      prueba(),
       calculadora(),
       cuadroDeTexto(),
 

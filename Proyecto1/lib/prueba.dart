@@ -1,64 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:proyecto1/cuadroDeTexto.dart';
 
 
 
 class prueba extends StatefulWidget {
-  String text1,text2;
-  prueba(this.text1,this.text2);
+
+  const prueba({Key? key}) : super(key: key);
   @override
   _pruebaState createState() => _pruebaState();
 
 }
 
 class _pruebaState extends State<prueba>{
+  String title = "Mi fruta favorita es ";
+  String fruit = 'no lo se';
 
-  final _formKey = GlobalKey<FormState>();
-  late FocusNode myFocusNode;
-
-
-  @override
-  void initState() {
-    super.initState();
-    myFocusNode = FocusNode();
+  callback(varFruit) {
+    setState(() {
+      fruit = varFruit;
+    });
   }
+    @override
+    Widget build(BuildContext context){
 
-  @override
-  void dispose() {
-    // Limpia el nodo focus cuando se haga dispose al formulario
-    myFocusNode.dispose();
-    super.dispose();
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold
-      (
-
-      //backgroundColor: Colors.deepOrangeAccent,
-        body: Center
-          (
-          child: Column
-            (
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>
-            [
-              Text
-                (
-                //'Pagina Inicial\n Bienvenido\nUsuario: '+widget.text1+'\nCarrera: '+widget.text2,
-                  'Pagina Inicial\nBienvenido\nUsuario:'+ widget.text1+'\nCarrera: '+widget.text2,
-                  style: TextStyle(fontSize: 35)
-              ),
-              Image.network
-                (
-                'https://th.bing.com/th/id/R.11b61ab967822761fe4e6665cb61273a?rik=t5eT5%2fiYMsBVqg&pid=ImgRaw&r=0',
-                scale: 4, height: 300,
-              ),
-
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title + fruit),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+            FruitButton(fruit: 'Apples', callback: callback),
+              FruitButton(fruit: 'Oranges', callback: callback),
+              FruitButton(fruit: 'Carrot', callback: callback),
+              FruitButton(fruit: 'Strawberry',callback: callback)
             ],
           ),
-        )
+        ),
+      ),
     );
+    }
+}
+
+class FruitButton extends StatelessWidget{
+  final String fruit;
+  final Function callback;
+  FruitButton({required this.fruit, required this.callback});
+
+  @override
+  Widget build(BuildContext context){
+    return ElevatedButton(
+        child: Text(fruit),
+        onPressed: (){
+          callback(fruit);
+    },
+
+
+    );
+
   }
 }
