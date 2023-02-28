@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-
+var texto1 = "";
+var texto2 = "";
 
 class cuadroDeTexto extends StatefulWidget {
 
@@ -15,8 +16,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
 
   final _formKey = GlobalKey<FormState>();
   late FocusNode myFocusNode;
-  String texto1 = "";
-  String texto2 = "";
+
 
   @override
   void initState() {
@@ -56,7 +56,6 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                 icon: Icon(Icons.perm_contact_cal_rounded),
                 labelText: 'Ingresa tu usuario'
             ),
-
           ),
 
           /// CAMPO DE TEXTO 2
@@ -64,7 +63,6 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
             textAlign: TextAlign.center,
             validator: (value) {
               if (value!.isEmpty) {
-
                 return 'Ingrese al area que pertenece';
               }else{
 
@@ -79,7 +77,6 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
 
           /// MENSAJE DE ENVIO Y BOTON DE ENVIAR
           Padding(
-
             padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 25),
             child: RaisedButton(
               color: Colors.blueAccent,
@@ -88,9 +85,9 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                 // devolverá true si el formulario es válido, o falso si
                 // el formulario no es válido.
                 if (_formKey.currentState!.validate()) {
+
                   // Si el formulario es válido, queremos mostrar un Snackbar
                   Scaffold.of(context).showSnackBar(SnackBar(content: Text('Usuario: '+texto1+'\nCarrera: '+texto2)));
-
                 }
               },
               child: Text('Enviar'),
@@ -102,3 +99,58 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
     );
   }
 }
+
+
+/// Segunda clase
+class Mandar extends StatefulWidget{
+
+
+  @override
+  _MandarState createState() => _MandarState();
+}
+
+class _MandarState extends State<Mandar>{
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold
+      (
+
+      //backgroundColor: Colors.deepOrangeAccent,
+        body: Center
+          (
+          child: Column
+            (
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>
+            [
+
+              Text(
+
+                'Bienvenido:\n'+ texto1 + "\nDe la carrera de: "+ texto2,
+
+                style: TextStyle(
+                    fontSize: 50,
+                    fontFamily: 'rbold',
+                ),
+              ),
+              Image.network
+                (
+                'https://th.bing.com/th/id/R.11b61ab967822761fe4e6665cb61273a?rik=t5eT5%2fiYMsBVqg&pid=ImgRaw&r=0',
+                scale: 4, height: 300,
+              ),
+
+              ///Image.asset('assets/images/Quede.png'),
+
+
+            ],
+          ),
+        )
+    );
+
+  }
+}
+
+
+
+
