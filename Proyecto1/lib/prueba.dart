@@ -3,7 +3,7 @@ import 'package:flutter/painting.dart';
 import 'package:proyecto1/cuadroDeTexto.dart';
 
 
-
+/// hecho para ver como funciona flutter y el retorno de variables
 class prueba extends StatefulWidget {
 
   const prueba({Key? key}) : super(key: key);

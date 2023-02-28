@@ -49,6 +49,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
               if (value!.isEmpty) {
                 return 'Ingrese el usuario';
               }else{
+                /// Almacena el valor una vez que valida que se ingreso un dato
                 texto1 = value;
               }
             },
@@ -65,10 +66,11 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
               if (value!.isEmpty) {
                 return 'Ingrese al area que pertenece';
               }else{
-
+                /// Almacena el valor una vez que valida que se ingreso un dato
                texto2 = value;
               }
             },
+            /// Decoracion
             decoration: InputDecoration(
                 icon: Icon(Icons.work),
                 labelText: 'Ingresa tu carrera'
@@ -82,11 +84,11 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
               color: Colors.blueAccent,
               textColor: Colors.white,
               onPressed: () {
-                // devolverá true si el formulario es válido, o falso si
-                // el formulario no es válido.
+                /// devolverá true si el formulario es válido, o falso si
+                /// el formulario no es válido.
                 if (_formKey.currentState!.validate()) {
 
-                  // Si el formulario es válido, queremos mostrar un Snackbar
+                  /// Mostrara una barra en la parte inferior si el formulario es valido
                   Scaffold.of(context).showSnackBar(SnackBar(content: Text('Usuario: '+texto1+'\nCarrera: '+texto2)));
                 }
               },
@@ -116,7 +118,6 @@ class _MandarState extends State<Mandar>{
     return Scaffold
       (
 
-      //backgroundColor: Colors.deepOrangeAccent,
         body: Center
           (
           child: Column
@@ -124,24 +125,38 @@ class _MandarState extends State<Mandar>{
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>
             [
+              /// Cuadro que encierra al texto
+              Container(
+                padding: const EdgeInsets.all(50.0),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 7.5, color: Colors.deepPurpleAccent),
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+              /// Texto que imprime los datos ingresados
+              child:Text(
 
-              Text(
-
-                'Bienvenido:\n'+ texto1 + "\nDe la carrera de: "+ texto2,
+                'Hola '+ texto1 +"!"+ "\nDe la carrera de: "+ texto2,
 
                 style: TextStyle(
                     fontSize: 50,
-                    fontFamily: 'rbold',
+                    fontFamily: 'SpaceMono',
+                    backgroundColor: Colors.lightBlueAccent,
+
                 ),
               ),
-              Image.network
-                (
-                'https://th.bing.com/th/id/R.11b61ab967822761fe4e6665cb61273a?rik=t5eT5%2fiYMsBVqg&pid=ImgRaw&r=0',
-                scale: 4, height: 300,
+        ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:[
+                Image.asset('images/WakuWaku.png'),
+                  Image.network
+                    (
+                    'https://th.bing.com/th/id/R.11b61ab967822761fe4e6665cb61273a?rik=t5eT5%2fiYMsBVqg&pid=ImgRaw&r=0',
+                    scale: 4, height: 300,
+                  ),
+                ],
               ),
-
-              ///Image.asset('assets/images/Quede.png'),
-
 
             ],
           ),
