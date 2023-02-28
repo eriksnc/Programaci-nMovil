@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto1/calculadora.dart';
 import 'package:proyecto1/cuadroDeTexto.dart';
 import 'package:proyecto1/inicio.dart';
+import 'package:proyecto1/mensaje.dart';
 import 'package:proyecto1/prueba.dart';
 
 class barra extends StatefulWidget
@@ -29,7 +30,7 @@ class _BasicBarraState extends State<barra> {
   TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
 
   static const List<Widget> _paginas = <Widget>[
-      prueba(),
+      mensaje(),
       calculadora(),
       cuadroDeTexto(),
 
