@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:proyecto1/Control_Almacenamiento.dart';
 
 var texto1 = "";
 var texto2 = "";
@@ -50,7 +51,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                 return 'Ingrese el usuario';
               }else{
                 /// Almacena el valor una vez que valida que se ingreso un dato
-                texto1 = value;
+                ControlAlmacenamiento.prefs.setString('Nombre', value);
               }
             },
             decoration: InputDecoration(
@@ -67,7 +68,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                 return 'Ingrese al area que pertenece';
               }else{
                 /// Almacena el valor una vez que valida que se ingreso un dato
-               texto2 = value;
+                ControlAlmacenamiento.prefs.setString('Carrera', value);
               }
             },
             /// Decoracion
@@ -89,7 +90,6 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                 if (_formKey.currentState!.validate()) {
 
                   /// Mostrara una barra en la parte inferior si el formulario es valido
-                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Usuario: '+texto1+'\nCarrera: '+texto2)));
                 }
               },
               child: Text('Enviar'),
@@ -102,69 +102,6 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
   }
 }
 
-
-/// Segunda clase
-class Mandar extends StatefulWidget{
-
-
-  @override
-  _MandarState createState() => _MandarState();
-}
-
-class _MandarState extends State<Mandar>{
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold
-      (
-
-        body: Center
-          (
-          child: Column
-            (
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>
-            [
-              /// Cuadro que encierra al texto
-              Container(
-                padding: const EdgeInsets.all(50.0),
-                decoration: BoxDecoration(
-                  border: Border.all(width: 7.5, color: Colors.deepPurpleAccent),
-                  borderRadius: BorderRadius.all(Radius.circular(50)),
-                ),
-              /// Texto que imprime los datos ingresados
-              child:Text(
-
-                'Hola '+ texto1 +"!"+ "\nDe la carrera de: "+ texto2,
-
-                style: TextStyle(
-                    fontSize: 50,
-                    fontFamily: 'SpaceMono',
-                    backgroundColor: Colors.lightBlueAccent,
-
-                ),
-              ),
-        ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:[
-                Image.asset('images/WakuWaku.png'),
-                  Image.network
-                    (
-                    'https://th.bing.com/th/id/R.11b61ab967822761fe4e6665cb61273a?rik=t5eT5%2fiYMsBVqg&pid=ImgRaw&r=0',
-                    scale: 4, height: 300,
-                  ),
-                ],
-              ),
-
-            ],
-          ),
-        )
-    );
-
-  }
-}
 
 
 

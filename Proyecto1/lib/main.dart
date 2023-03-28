@@ -1,15 +1,15 @@
 // Libreria para importar
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 import 'package:proyecto1/barra.dart';
+import 'package:proyecto1/Control_Almacenamiento.dart';
 
 
 //Inicia la aplicación no recive nada y no tiene atributos
-void main() {
+void main() async{
+  await ControlAlmacenamiento.configurePrefs();
   // Corre la aplicacion , construye la clase
   runApp(const MyApp());
 }
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget
       (
         primarySwatch: Colors.blue,
       ),
-      home:barra(),
+      home:const barra(),
     );
   }
 }
