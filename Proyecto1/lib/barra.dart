@@ -1,22 +1,19 @@
-// ignore_for_file: unnecessary_const
-
 import 'package:flutter/material.dart';
+
 import 'package:proyecto1/calculadora.dart';
 import 'package:proyecto1/cuadroDeTexto.dart';
 import 'package:proyecto1/Bienvenida.dart';
 
-
-
+// Widget con estado
 class barra extends StatefulWidget
 {
   const barra({Key? key}) : super(key: key);
-
   @override
   _BasicBarraState createState() => _BasicBarraState();
 }
 
-
 class _BasicBarraState extends State<barra> {
+
 
   void _onItemTapped(int index) {
     setState(() {
@@ -40,12 +37,11 @@ class _BasicBarraState extends State<barra> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Primera Asignacion'),
-      ),
+
       body: Center(
         child: _paginas.elementAt(_selectedIndex),
       ),
+
       /// NAVEGADOR
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

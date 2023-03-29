@@ -17,6 +17,9 @@ class _MandarState extends State<Mandar>{
   Widget build(BuildContext context) {
     return Scaffold
       (
+        appBar:AppBar (
+          title: Text('Bienvenida'),
+        ),
         body: Center
           (
 
@@ -35,9 +38,7 @@ class _MandarState extends State<Mandar>{
 
                 /// Texto que imprime los datos ingresados
                 child:Text(
-
-                  'Hola '+ (ControlAlmacenamiento.prefs.getString('Nombre') ?? 'Desconocido') +"!"+ "\nDe la carrera de: "+
-                      (ControlAlmacenamiento.prefs.getString('Carrera') ?? 'S/C'),
+                  'Hola '+ (ControlAlmacenamiento.prefs.getString('Nombre') ?? 'Desconocido') +"!"+ "\nBienvenido :)",
 
                   style: TextStyle(
                     fontSize: 50,
@@ -52,8 +53,7 @@ class _MandarState extends State<Mandar>{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:[
                   Image.asset('images/WakuWaku.png'),
-                  Image.network
-                    (
+                  Image.network(
                     'https://th.bing.com/th/id/R.11b61ab967822761fe4e6665cb61273a?rik=t5eT5%2fiYMsBVqg&pid=ImgRaw&r=0',
                     scale: 4, height: 300,
                   ),

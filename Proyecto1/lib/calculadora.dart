@@ -106,6 +106,9 @@ class _calculadora extends State<calculadora> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar (
+        title: Text('Calculadora'),
+      ),
       /// BOTONES
       body: Center(
         child: Column(
