@@ -13,6 +13,7 @@ class Mandar extends StatefulWidget{
 
 class _MandarState extends State<Mandar>{
 
+  String? pasword = ControlAlmacenamiento.prefs.getString('Password');
   @override
   Widget build(BuildContext context) {
     return Scaffold
@@ -28,6 +29,7 @@ class _MandarState extends State<Mandar>{
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>
             [
+              (pasword == "1234") ?
               /// Cuadro que encierra al texto
               Container(
                 padding: const EdgeInsets.all(50.0),
@@ -37,7 +39,7 @@ class _MandarState extends State<Mandar>{
                 ),
 
                 /// Texto que imprime los datos ingresados
-                child:Text(
+                child: Text(
                   'Hola '+ (ControlAlmacenamiento.prefs.getString('Nombre') ?? 'Desconocido') +"!"+ "\nBienvenido :)",
 
                   style: TextStyle(
@@ -47,8 +49,11 @@ class _MandarState extends State<Mandar>{
 
                   ),
                 ),
+              )
+            : Text(
+                  'Hola logeate por favor'
               ),
-
+              (pasword == "1234") ?
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:[
@@ -56,8 +61,11 @@ class _MandarState extends State<Mandar>{
                   Image.network(
                     'https://th.bing.com/th/id/R.11b61ab967822761fe4e6665cb61273a?rik=t5eT5%2fiYMsBVqg&pid=ImgRaw&r=0',
                     scale: 4, height: 300,
-                  ),
+                  )
                 ],
+              )
+                  : Text(
+                  ''
               ),
             ],
           ),

@@ -81,7 +81,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                     return 'Ingrese su contraseña';
                   }else{
                     /// Almacena el valor una vez que valida que se ingreso un dato
-                    ControlAlmacenamiento.prefs.setString('Carrera', value);
+                    ControlAlmacenamiento.prefs.setString('Password', value);
                   }
                 },
                 /// Decoracion
@@ -106,7 +106,16 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
                   if (_formKey.currentState!.validate()) {
 
                     /// Mostrara una barra en la parte inferior si el formulario es valido
-                    ///
+                    String? password = ControlAlmacenamiento.prefs.getString('Password');
+                    if (password == '1234') {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Inicio de sesion correcto')));
+
+                      // Las credenciales son válidas, realizar acción
+                    } else {
+                      // Las credenciales son inválidas, mostrar mensaje de error
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('contraseña incorrecta')));
+                    }
+
                   }
                 },
                 child: Text('Enviar'),

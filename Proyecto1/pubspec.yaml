@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
 # Inserta esto aqui dentro de las dependencias
+  #instanciar las variables en un diccionario
   shared_preferences:
   image_picker:
 
