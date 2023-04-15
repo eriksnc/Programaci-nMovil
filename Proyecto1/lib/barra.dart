@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:proyecto1/calculadora.dart';
 import 'package:proyecto1/cuadroDeTexto.dart';
 import 'package:proyecto1/Bienvenida.dart';
+import 'package:proyecto1/Coordenadas.dart';
+
+import 'Maps.dart';
 
 // Widget con estado
 class barra extends StatefulWidget
@@ -30,6 +33,8 @@ class _BasicBarraState extends State<barra> {
       Mandar(),
       calculadora(),
       cuadroDeTexto(),
+      Coordenadas(),
+      Maps(),
 
   ];
 
@@ -44,6 +49,7 @@ class _BasicBarraState extends State<barra> {
 
       /// NAVEGADOR
       bottomNavigationBar: BottomNavigationBar(
+        type:BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -56,6 +62,14 @@ class _BasicBarraState extends State<barra> {
           BottomNavigationBarItem(
             icon: Icon(Icons.edit),
             label: 'Ingreso de datos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_location_alt_sharp),
+            label: 'Ubicacion',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map_outlined),
+            label: 'Mapa',
           ),
         ],
         currentIndex: _selectedIndex,

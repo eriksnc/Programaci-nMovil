@@ -29,10 +29,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-# Inserta esto aqui dentro de las dependencias
-  #instanciar las variables en un diccionario
-  shared_preferences:
-  image_picker:
+  #actualixar dart
+  flutter_osm_plugin: ^0.53.4
+  shared_preferences: ^2.1.0
+  image_picker: ^0.8.7+3
+  geolocator: ^9.0.2
 
 
   # The following adds the Cupertino Icons font to your application.

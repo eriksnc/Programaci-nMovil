@@ -97,9 +97,7 @@ class _cuadrotextoState extends State<cuadroDeTexto>{
             /// MENSAJE DE ENVIO Y BOTON DE ENVIAR
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 25),
-              child: RaisedButton(
-                color: Colors.blueAccent,
-                textColor: Colors.white,
+              child: ElevatedButton(
                 onPressed: () {
                   /// devolverá true si el formulario es válido, o falso si
                   /// el formulario no es válido.
